@@ -1,0 +1,9 @@
+- algorithm for storing image in delivery
+  - if new image provided:
+    - upload new image to cloudinary
+    - if upload success:
+      - store `newUrl` + `newPublicId`
+      - delete old image using old `public_id` (if exists)
+    - else:
+      - throw error, do not modify existing image
+  - update delivery with new image data

@@ -1,0 +1,14 @@
+- data to track per delivery
+  - delivery package photo
+  - customer name
+  - cost
+  - material name
+  - site name
+  - tracking number
+  - courier name
+  - dispatch date
+  - status: in-transit, pending, completed, returned
+- features to support
+  - crud operation for delivery 
+  - general search
+  - filter by date range
