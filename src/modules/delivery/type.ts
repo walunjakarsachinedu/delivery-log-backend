@@ -1,8 +1,10 @@
-export type DeliveryStatus = 'in-transit' | 'pending' | 'completed' | 'returned';
+import type { DELIVERY_STATUSES } from "./constants.js";
+
+export type DeliveryStatus = (typeof DELIVERY_STATUSES)[number];
 
 export interface Delivery {
-  id: string;
-  photoUrl?: string | null;
+  _id: string;
+  photoUrl?: string | null | undefined;
   customerName: string;
   cost: number;
   materialName: string;

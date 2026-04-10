@@ -1,5 +1,6 @@
 import type { Request, Response, NextFunction } from "express";
 import jwt from "jsonwebtoken";
+import { getEnv } from "../utils/getEnv.js";
 
 type JwtPayload = {
   sub: string;
@@ -23,7 +24,7 @@ export function verifyTokenAndSetContext() {
 
       const decoded = jwt.verify(
         token,
-        process.env.JWT_SECRET as string
+        getEnv("JWT_SECRET") as string
       ) as JwtPayload;
 
       // attach to req
